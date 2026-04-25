@@ -38,20 +38,20 @@ Metode comune:
 •	click
 •	type
 •	getText
-🔹 LoginPage
+- LoginPage
 Acțiuni specifice paginii de login:
 •	introducerea username-ului
 •	introducerea parolei
 •	click pe Login
 •	verificarea mesajului de eroare
-🔹 ProductsPage
+- ProductsPage
 Funcționalități:
 •	sortare după nume și preț
 •	obținerea listelor de titluri și prețuri
 •	add to cart
-🔹 BaseTest
+  - BaseTest
 Configurarea WebDriver + WebDriverWait + ChromeOptions.
-🔹 ProductsTest
+- ProductsTest
 Conține toate scenariile de testare.
 
 Tehnologii folosite:
