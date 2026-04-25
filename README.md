@@ -1,18 +1,28 @@
 Selenium ProductsTest — Automated UI Testing Framework
 
-Acest proiect conține teste automate scrise în Java + Selenium WebDriver + TestNG, care verifică funcționalitățile principale ale aplicației web: https://www.saucedemo.com/
-Framework-ul este construit pe principiile Page Object Model (POM) și include integrare completă cu Allure Reports.
+Acest proiect reprezintă un framework complet de Test Automation pentru aplicația web  https://www.saucedemo.com/
+Framework-ul este construit folosind:
+•	Java
+•	Selenium WebDriver
+•	TestNG
+•	Page Object Model (POM)
+•	Allure Reports
+•	WebDriverManager
+•	Maven
+•	GitHub Actions (CI/CD Pipeline)
+•	IntelliJ IDEA
+Proiectul acoperă scenarii esențiale precum login, sortări, verificarea prețurilor și adăugarea produselor în coș.
 
-Scenarii testate:
-
-•	Login valid – verifică accesul la pagina Products după autentificare
-•	Login invalid – verifică afișarea mesajului de eroare pentru credențiale greșite
-•	Sortarea produselor A → Z
-•	Sortarea produselor Z → A
-•	Sortarea produselor după preț (low → high)
-•	Adăugarea unui produs în coș
+ Scenarii testate
+•	✔️ Login valid – acces la pagina Products
+•	✔️ Login invalid – afișarea mesajului de eroare
+•	✔️ Sortarea produselor A → Z
+•	✔️ Sortarea produselor Z → A
+•	✔️ Sortarea produselor după preț (low → high)
+•	✔️ Adăugarea unui produs în coș
 
 Structura proiectului:
+
 src/
  ├── main/java/org.example
  │     ├── BasePage.java
@@ -23,7 +33,7 @@ src/
        └── ProductsTest.java
 
 BasePage
-Metode comune folosite în toate paginile:
+Metode comune:
 •	waitForVisible
 •	click
 •	type
@@ -35,84 +45,73 @@ Acțiuni specifice paginii de login:
 •	click pe Login
 •	verificarea mesajului de eroare
 🔹 ProductsPage
-Funcționalități pentru pagina de produse:
+Funcționalități:
 •	sortare după nume și preț
 •	obținerea listelor de titluri și prețuri
-•	adăugarea produselor în coș
+•	add to cart
 🔹 BaseTest
 Configurarea WebDriver + WebDriverWait + ChromeOptions.
 🔹 ProductsTest
-Conține toate scenariile de testare:
-•	login valid/invalid
-•	sortări
-•	add to cart
+Conține toate scenariile de testare.
 
-Tehnologii folosite
-•	Java – limbajul principal
-•	Selenium WebDriver – automatizarea browserului
-•	TestNG – structurarea și rularea testelor
-•	WebDriverManager – gestionarea automată a driverelor
-•	Maven – managementul dependențelor
-•	IntelliJ IDEA – IDE folosit
-•	Allure Reports – raportare avansată
+Tehnologii folosite:
+Tehnologie	Rol
+Java	Limbajul principal
+Selenium WebDriver	Automatizarea browserului
+TestNG	Framework de testare
+WebDriverManager	Gestionarea driverelor
+Maven	Build & dependency management
+Allure Reports	Raportare avansată
+GitHub Actions	CI/CD pipeline
+IntelliJ IDEA	IDE folosit
 
-Rulare proiect
-1.Clonezi proiectul:
+Rulare proiect:
+1.	Clonezi repository-ul
 git clone <repository-url>
-2.Deschizi proiectul în IntelliJ IDEA
-3.Rulezi testele
-Poți rula direct clasa ProductsTest sau întregul pachet de teste.
-(Chrome trebuie să fie instalat pe sistem)
+2.	Deschizi proiectul în IntelliJ IDEA
+3.	Rulezi testele
+Poți rula direct clasa ProductsTest sau întregul pachet.
+(Chrome trebuie să fie instalat pe sistem.)
 
 Generarea raportului Allure:
 După rularea testelor, se generează automat folderul:
-allure-results (in Terminal).
+allure-results
 Pentru a genera raportul:
 allure serve allure-results
+Raportul se va deschide automat în browser.
 
-Raportul se va deschide automat în browser și va include:
-•	grafice
-•	timeline
-•	suite
-•	severități
-•	stories & features
+CI/CD Pipeline — GitHub Actions
+Proiectul include un pipeline configurat în GitHub Actions, care rulează automat testele Selenium la fiecare push pe branch-ul master.
+Pipeline-ul:
+•	instalează Java și Maven
+•	instalează Google Chrome
+•	rulează testele TestNG
+•	generează artefactele allure-results
+•	marchează build-ul ca success sau failed
+•	permite vizualizarea execuțiilor în tab-ul Actions
+Workflow-ul se află în:
+.github/workflows/selenium-tests.yml
 
-Exemple de scenarii de testare:
-1. Login valid
+Exemple de scenarii de testare
+✔️ Login valid
 •	Deschid pagina de login
 •	Introduc username și parolă valide
 •	Verific redirecționarea către pagina Products
-•	Verific că sunt afișate 6 produse
-2. Login invalid
-•	Deschid pagina de login
+•	Verific afișarea celor 6 produse
+✔️ Login invalid
 •	Introduc username valid + parolă greșită
 •	Apăs Login
-•	Verific afișarea mesajului de eroare
-     3. Sortarea produselor A → Z
-•	Mă autentific
+•	Verific mesajul de eroare
+✔️ Sortarea A → Z
 •	Selectez sortarea Name (A to Z)
-•	Preiau titlurile produselor
 •	Verific ordinea alfabetică
-4. Sortarea produselor Z → A
-•	Mă autentific
+✔️ Sortarea Z → A
 •	Selectez sortarea Name (Z to A)
-•	Preiau titlurile
 •	Verific ordinea descrescătoare
- 5. Sortarea produselor după preț (low → high)
-•	Mă autentific
+✔️ Sortarea după preț (low → high)
 •	Selectez sortarea Price (low to high)
-•	Preiau lista prețurilor
 •	Verific ordonarea crescătoare
- 6. Adăugarea unui produs în coș
-•	Mă autentific
-•	Selectez produsul Sauce Labs Backpack
+✔️ Adăugarea unui produs în coș
+•	Selectez Sauce Labs Backpack
 •	Apăs Add to cart
 •	Verific că butonul devine „Remove”
-
-Concluzii:
-Acest proiect demonstrează implementarea unui framework simplu, curat și eficient de automatizare folosind:
-•	Java
-•	Selenium WebDriver
-•	TestNG
-•	Page Object Model
-•	Allure Reports
