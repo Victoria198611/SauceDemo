@@ -14,12 +14,12 @@ Framework-ul este construit folosind:
 Proiectul acoperă scenarii esențiale precum login, sortări, verificarea prețurilor și adăugarea produselor în coș.
 
  Scenarii testate
-•	✔️ Login valid – acces la pagina Products
-•	✔️ Login invalid – afișarea mesajului de eroare
-•	✔️ Sortarea produselor A → Z
-•	✔️ Sortarea produselor Z → A
-•	✔️ Sortarea produselor după preț (low → high)
-•	✔️ Adăugarea unui produs în coș
+•	Login valid – acces la pagina Products
+•	Login invalid – afișarea mesajului de eroare
+•	Sortarea produselor A → Z
+• Sortarea produselor Z → A
+• Sortarea produselor după preț (low → high)
+• Adăugarea unui produs în coș
 
 Structura proiectului:
 
@@ -93,25 +93,25 @@ Workflow-ul se află în:
 .github/workflows/selenium-tests.yml
 
 Exemple de scenarii de testare
-✔️ Login valid
+- Login valid
 •	Deschid pagina de login
 •	Introduc username și parolă valide
 •	Verific redirecționarea către pagina Products
 •	Verific afișarea celor 6 produse
-✔️ Login invalid
+-Login invalid
 •	Introduc username valid + parolă greșită
 •	Apăs Login
 •	Verific mesajul de eroare
-✔️ Sortarea A → Z
+ -Sortarea A → Z
 •	Selectez sortarea Name (A to Z)
 •	Verific ordinea alfabetică
-✔️ Sortarea Z → A
+-Sortarea Z → A
 •	Selectez sortarea Name (Z to A)
 •	Verific ordinea descrescătoare
-✔️ Sortarea după preț (low → high)
+ Sortarea după preț (low → high)
 •	Selectez sortarea Price (low to high)
 •	Verific ordonarea crescătoare
-✔️ Adăugarea unui produs în coș
+ -Adăugarea unui produs în coș
 •	Selectez Sauce Labs Backpack
 •	Apăs Add to cart
 •	Verific că butonul devine „Remove”
