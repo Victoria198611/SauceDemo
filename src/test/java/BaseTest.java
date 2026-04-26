@@ -20,7 +20,13 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
 
+        //Ruleaza headless doar in GitHub Actions
+        if(System.getenv("GITHUB_ACTIONS")!=null){
+            options.addArguments("--headless=new");
+        }
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 
