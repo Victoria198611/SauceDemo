@@ -1,0 +1,7 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"0","SauceDemo Tests","0","Products","2","0","Add products to Cart","0"
+"0","SauceDemo Tests","0","Products","2","0","Sort products by price ascending","0"
+"0","SauceDemo Tests","0","Products","2","0","Sort products Z to A","0"
+"0","SauceDemo Tests","0","Products","2","0","Sort products A to Z","0"
+"0","SauceDemo Tests","0","Products","2","0","Invalid login shows error message","0"
+"0","SauceDemo Tests","0","Products","2","0","Valid login allows access to products page","0"
