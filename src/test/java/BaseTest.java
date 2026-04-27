@@ -17,6 +17,7 @@ public class BaseTest {
     public void setup() {
         WebDriverManager.chromedriver().setup();
 
+        //Adaptare pentru Linux (GitHub Actions CI)
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
